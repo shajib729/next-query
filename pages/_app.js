@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import React from 'react'
-import NextNProgress from "nextjs-progressbar";
 import {
   Hydrate,
   QueryClient,
@@ -14,14 +13,6 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-      <NextNProgress
-        color="#3c55ff"
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={3}
-        spinner={false}
-        showOnShallow={true}
-       />
         <Component {...pageProps} />
       </Hydrate>
       {/* <ReactQueryDevtools /> */}

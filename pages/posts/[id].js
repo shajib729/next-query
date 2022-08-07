@@ -2,7 +2,6 @@ import { useRouter, } from 'next/router';
 import { useEffect, useState } from 'react';
   
 export async function getServerSideProps(context) {
-  console.log({context});
   await new Promise((resolve) => {
     setTimeout(resolve, 1000)
   })
