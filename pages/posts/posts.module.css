@@ -1,0 +1,22 @@
+.blogs{
+    padding: 0 20px;
+}
+
+.post{
+    display: flex;
+    background-color: #2f1e3f;
+    color: white;
+    margin-bottom: 20px;
+    padding:0 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.post:hover{
+    background-color: #060407;
+}
+
+.post h3.id{
+    margin-right: 20px;
+}
