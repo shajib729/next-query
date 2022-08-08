@@ -20,9 +20,11 @@ const Post = ({post}) => {
               <div className={styles.post_published_time}>5 minutes ago</div>
             </div>
           </div>
-          <div className={styles.post_title}>
-            <Link href={`/posts/${post.id}`}>{post.title}</Link>
-          </div>
+          <Link href={`/posts/${post.id}`}>
+            <div className={styles.post_title}>
+              {post.id}. {post.title}
+            </div>
+          </Link>
           <div className={styles.post_tags}>
             {
               /* tags here */
