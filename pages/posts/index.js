@@ -13,8 +13,7 @@ export const getPosts = async ({ pageParam = 1 }) => {
 }
 
 
-const posts = (props) => {
-  console.log(props);
+const posts = () => {
   const { data, isError, isLoading, error, isFetching, fetchNextPage, hasNextPage } = useInfiniteQuery(['posts'], getPosts,
     {
       getNextPageParam: (_, pages) => pages.length < 10 ? pages.length + 1 : undefined
@@ -74,11 +73,11 @@ export default posts
 
 export const getServerSideProps=async ()=>{
   const res = fetch('/')
-  const data = await (await res).json()
-
+  const data = await res.json()
+  console.log(data)
   return {
     props:{
-      data
+      
     }
   }
 }
