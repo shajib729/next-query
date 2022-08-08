@@ -73,7 +73,7 @@ const posts = (props) => {
 export default posts
 
 export const getServerSideProps=async ()=>{
-  const res = fetch('http://localhost:8000')
+  const res = fetch('/')
   const data = await (await res).json()
 
   return {
