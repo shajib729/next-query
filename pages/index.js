@@ -15,9 +15,11 @@ export default function Home() {
         <div
           style={{
             position:'relative',
-            width:'500px', 
-            height:'400px',
-            overflow:'hidden !important'
+            padding: '1rem',
+            maxWidth: '500px',
+            aspectRatio: '5/3',
+            width: '100%',
+            overflow:'hidden !important',
           }}>
         <Image
           layout='fill'
