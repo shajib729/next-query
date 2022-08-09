@@ -16,7 +16,8 @@ export default function Home() {
           style={{
             position:'relative',
             width:'500px', 
-            height:'400px'
+            height:'400px',
+            overflow:'hidden !important'
           }}>
         <Image
           layout='fill'
