@@ -24,21 +24,21 @@ const Nav = () => {
                 }
                 {
                     status == 'authenticated' && (
-                    <>
-                        <a onClick={(e) => {
-                            e.preventDefault()
-                            router.push('/')
-                            signOut()
-                        }}>
-                            Sign Out
-                        </a>
-                        {
-                            status=='authenticated' &&
-                            <div className={styles.profile_wrapper}>
-                                <Image src={session?.user?.image} layout='fill' objectFit='cover'/>
-                            </div>
-                        }
-                    </>
+                        <>
+                            <a onClick={(e) => {
+                                e.preventDefault()
+                                router.push('/')
+                                signOut()
+                            }}>
+                                Sign Out
+                            </a>
+                            {
+                                status == 'authenticated' &&
+                                <div className={styles.profile_wrapper}>
+                                    <Image src={session?.user?.image} layout='fill' objectFit='cover' />
+                                </div>
+                            }
+                        </>
                     )
                 }
             </div>

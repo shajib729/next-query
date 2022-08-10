@@ -1,10 +1,6 @@
 import '../styles/globals.css'
 import React from 'react'
-import {
-  Hydrate,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
+import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import NextNProgress from 'nextjs-progressbar'
 import Nav from '../components/Nav'
 import { SessionProvider } from 'next-auth/react'

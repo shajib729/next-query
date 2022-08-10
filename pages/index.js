@@ -1,9 +1,12 @@
+import { useSession } from 'next-auth/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const {data:session} = useSession()
+  console.log(session?.user);
   return (
     <div className={styles.container}>
       <Head>
@@ -12,6 +15,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        {session?.user && <div style={{marginBottom:'4rem',fontSize:'4rem'}}>Welcome <span style={{fontWeight:'600',color:'#4163ff'}}>{session.user.name}</span> to My Blog</div>}
         <div
           style={{
             position:'relative',

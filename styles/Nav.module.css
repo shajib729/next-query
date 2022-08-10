@@ -35,4 +35,5 @@
     width: 50px;
     border-radius: 50%;
     overflow: hidden;
+    border: 1px solid #cac9c9;
 }
