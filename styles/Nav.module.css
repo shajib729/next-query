@@ -1,0 +1,38 @@
+.nav_container{
+    /* background-color: lightgray; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+.nav_container .logo{
+    font-size: 3rem;
+    font-weight: 700;
+    background: black;
+    color: white;
+    border-radius: 3px;
+    padding: 1rem 1.5rem;
+}
+
+.nav_container .nav_items{
+    display: flex;
+    align-items: center;
+}
+
+.nav_items a{
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.profile_wrapper{
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}

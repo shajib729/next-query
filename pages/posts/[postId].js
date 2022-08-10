@@ -1,5 +1,6 @@
+import { useQuery } from '@tanstack/react-query'
+import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
-import useSWR from 'swr'
 
 export const getPost =async (id) => {
   if(id){
@@ -12,25 +13,37 @@ export const getPost =async (id) => {
 }
 
 function Post() {
-  const {query:{postId}} = useRouter()
-  const {data, error} = useSWR(['post', postId], ()=>getPost(postId))
-  
-  if (!data) {
-    return <div>Loading...</div>
+  const {push, query:{postId}} = useRouter()
+  const {status} = useSession()
+  const {data, isLoading, isError, error} = useQuery(['post', postId], ()=>getPost(postId))
+
+  if(status==='unauthenticated'){
+    push('/login')
+    return <></>
   }
 
-  if (error) {
-    return <div>Error : {error}</div>
+  if(status==='loading'){
+    return <>Loading...</>
   }
 
-  else{return (
+  return (
     <>
-      <h2>
-        {data.id} {data.title}
-      </h2>
-      <p>{data.body}</p>
+    {
+      isLoading?
+      <h1>Loading...</h1>
+      :
+      isError?
+      <h1>Error: {error}</h1>
+      :
+      <>
+        <h2>
+          {data.id} {data.title}
+        </h2>
+        <p>{data.body}</p>
+      </>      
+    }
     </>
-  )}
+  )
 }
 
 export default Post

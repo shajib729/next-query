@@ -1,0 +1,64 @@
+.login_container{
+    min-height: 90vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.login_wrapper{
+    margin-top: 4rem;
+    max-width: 500px;
+    border: 1px solid rgb(171, 171, 171);
+    border-radius: 4px;
+    width: 100%;
+    padding: 3rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form input{
+    padding: 1.2rem 2rem;
+    font-size: 1.6rem;
+    outline: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    transition: .3s;
+}
+
+.form input.text_input:focus{
+    border-color: gray;
+}
+
+.form input[type=submit]{
+    background: #425aff;
+    color: white;
+    cursor: pointer;
+}
+
+.provider_button{
+    padding: 1.2rem 2rem;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.github_button{
+    margin-top: 2rem;
+    background: #202124;
+    color: white;
+}
+
+.google_button{
+    background: #ffffff;
+    color: #030303;
+    border: 1px solid #d2d2d2;
+}

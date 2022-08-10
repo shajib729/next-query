@@ -6,18 +6,23 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import NextNProgress from 'nextjs-progressbar'
+import Nav from '../components/Nav'
+import { SessionProvider } from 'next-auth/react'
 // import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps}) {
   const [queryClient] = React.useState(() => new QueryClient())
 
   return (
+    <SessionProvider session={pageProps.session}>
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <NextNProgress/>
-        <Component {...pageProps} />
+          <Nav />
+          <Component {...pageProps} />
       </Hydrate>
       {/* <ReactQueryDevtools /> */}
     </QueryClientProvider>
+    </SessionProvider>
   )
 }
